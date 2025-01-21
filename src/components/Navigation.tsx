@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, BarChart2, Shield, Heart } from "lucide-react";
+import { Menu, X, BarChart2, Shield, Heart, LogIn } from "lucide-react";
+import { Button } from "./ui/button";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,6 +34,18 @@ const Navigation = () => {
                 <span>{item.name}</span>
               </Link>
             ))}
+            <Button
+              variant="outline"
+              size="sm"
+              className="ml-4 bg-white/10 hover:bg-white/20 text-white border-white/20"
+              onClick={() => {
+                // Login functionality will be added once Supabase is connected
+                console.log("Login clicked");
+              }}
+            >
+              <LogIn className="h-4 w-4 mr-2" />
+              Login
+            </Button>
           </div>
 
           {/* Mobile Navigation Button */}
@@ -63,6 +76,18 @@ const Navigation = () => {
                   </div>
                 </Link>
               ))}
+              <Button
+                variant="outline"
+                size="sm"
+                className="w-full mt-4 bg-white/10 hover:bg-white/20 text-white border-white/20"
+                onClick={() => {
+                  // Login functionality will be added once Supabase is connected
+                  console.log("Login clicked");
+                }}
+              >
+                <LogIn className="h-4 w-4 mr-2" />
+                Login
+              </Button>
             </div>
           </div>
         )}
