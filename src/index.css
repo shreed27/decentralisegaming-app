@@ -43,7 +43,7 @@
 
 @layer components {
   .glass-card {
-    @apply bg-card/80 backdrop-blur-lg border border-white/10 shadow-lg;
+    @apply bg-white/5 backdrop-blur-lg border border-white/10 shadow-lg;
   }
 
   .hover-card {
@@ -53,6 +53,10 @@
   .nav-link {
     @apply text-muted-foreground hover:text-foreground transition-colors duration-200;
   }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-white to-purple-200;
+  }
 }
 
 .page-transition {
@@ -61,4 +65,15 @@
 
 .card-transition {
   @apply animate-slide-up;
+}
+
+/* Custom Animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
 }
